@@ -1,6 +1,6 @@
 ![panorama of field](../../figs/field_panorama.jpg)
 
-# Task 3 #
+# Task 3: Panoramas #
 
 Welcome, it's time for Task 3! Similar to last task, perform
 
