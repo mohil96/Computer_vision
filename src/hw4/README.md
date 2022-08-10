@@ -1,4 +1,4 @@
-# CSE 576 Homework 4 #
+# Task 4 #
 
 Welcome, it's time for neural networks! Needless to say, run
 
@@ -213,7 +213,3 @@ Modify `tryhw4.py` to use CIFAR. This should mostly involve swapping out referen
 #### 3.1.1 Question ####
 
 What is the best training accuracy and testing accuracy? Summarize all the hyperparameter combinations you tried.
-
-## Turn it in ##
-
-Turn in your `classifier.c` and hw4.pdf on canvas under Homework 4.
