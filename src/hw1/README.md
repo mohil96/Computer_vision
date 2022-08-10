@@ -1,4 +1,4 @@
-# CSE 576 Homework 1 #
+# Task 1 #
 
 Welcome. For the first assignment we'll just get to know the codebase a little bit and practice manipulating images! You'll be modifying the file `src/hw1/process_image.c`.
 
@@ -240,9 +240,6 @@ Implement `void scale_image(image im, int c, float v)` to scale a channel by a c
 
 Implement RGB to [Hue, Chroma, Lightness](https://en.wikipedia.org/wiki/CIELUV#Cylindrical_representation_.28CIELCH.29), a perceptually more accurate version of Hue, Saturation, Value. Note, this will involve gamma decompression, converting to CIEXYZ, converting to CIELUV, converting to HCL, and the reverse transformations. The upside is a similar colorspace to HSV but with better perceptual properties!
 
-## Turn it in ##
-
-You only need to turn in one file, your `process_image.c`. Use the canvas link on the class website.
 
 [1]: https://en.wikipedia.org/wiki/SRGB#The_sRGB_transfer_function_("gamma")
 [2]: https://en.wikipedia.org/wiki/Luma_(video)
