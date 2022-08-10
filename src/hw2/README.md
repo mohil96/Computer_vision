@@ -1,6 +1,6 @@
-# CSE 576 Homework 2 #
+# Task 2 #
 
-Welcome, it's time for homework 2! This one may be a little harder than the last one so remember to start early! In order to make grading easier, please only edit the files we mention to submit. You will submit the `src/hw2/modify_image.c` file on Canvas.
+Welcome, it's time for task 2! This one may be a little harder than the last one so remember to start early! In order to make grading easier, please only edit the files we mention to submit. You will submit the `src/hw2/modify_image.c` file on Canvas.
 
 Run the following commands from inside your `Homework` folder:
 ```
@@ -13,7 +13,7 @@ and then run `./main test hw2`. For python tests use `python tryhw2.py`. During 
 make clean; make; ./main test hw2; python tryhw2.py
 ```
 
-NOTE: You may (ideally should) directly use functions you wrote in Homework 1 when needed.
+NOTE: You may (ideally should) directly use functions you wrote in Task 1 when needed.
 
 ## 1. Image resizing ##
 
@@ -242,7 +242,7 @@ Write a function `image colorize_sobel(image im)`. Call `image *sobel_image(imag
 
 ![](../../figs/lcolorized.png)
 
-## 2.6 EXTRA CREDIT: Median Filter ##
+## 2.6 Median Filter ##
 
 Now, we want to apply a non-linear filter, [Median Filter](https://en.wikipedia.org/wiki/Median_filter), to an image. Median filter is a great tool to solve the salt and pepper noises. We assume a median filter is a square, with the same height and width. The kernel size is always a positive odd number. We use clamp padding for borders. The output image should have the same width, height, and channels as the input image. You should apply median filter to each channel of the input image.
 
@@ -257,7 +257,7 @@ Input Noisy Image                 |  Output Image
 ![](../../figs/salt_petter_building.jpg)   |  ![](../../figs/building-median.png)
 
 
-### 2.7 SUPER EXTRA CREDIT: Bilateral Filter ###
+### 2.7 Bilateral Filter ###
 
 Now let's try blurring by not just assigning weights to surrounding pixels based on their spatial location in relation to the center pixel but also by how far away they are in terms of color from the center pixel. The idea of the [bilateral filter](https://cs.jhu.edu/~misha/ReadingSeminar/Papers/Tomasi98.pdf) is to blur everything in the image but the color edges. Once again we will be forming a filter, except now it will be different per pixel. The weights for a pixel's filter can be described as such:
 
@@ -275,10 +275,9 @@ for a kernel of size (2k+1), which you can perform by calling the `l1_normalize`
 
 Hint: For the spatial Gaussian, you can use the `make_gaussian_filter()` you implemented above, with `sigma1`. For the color distance Gaussian, you should compute the Gaussian with `sigma2` with the distance between the pixel values for each channel separately.
 
-#### TO DO (super extra credit) ####
+#### TO DO ####
 Write a function `image apply_bilateral_filter(image im, float sigma1, float sigma2)` where `sigma1` is for the spatial gaussian and `sigma2` is for the color distance Gaussian. Use a kernel size of 6 x `sigma1` for the bilateral filter. Your image should have a similar effect to the image below, so we suggest testing out a few spatial and color sigma parameters before submitting your final image (you can find the before image in `/data/bilateral_raw.png`. Note that it is 40x40 pixels and is being upsampled in this README). Ideally, `sigma1` should be > 1 and `sigma2` should be < 0.5.
 
-To submit the final image apply your filter to `/data/landscape.jpg` (write appropriate code in tryhw2.py and uwimg.py) and name it `bilateral.jpg`. Good luck!
 
 Before                 |  After 
 :-----------------:|:------------------:
@@ -286,7 +285,3 @@ Before                 |  After
 
 ![cat](../../figs/bilateral_cat.png)
 
-
-## Turn it in ##
-
-Turn in your `modify_image.c` on canvas under Homework 2. If you attempt the extra credits, also submit `median.jpg` and/or `bilateral.jpg`.
