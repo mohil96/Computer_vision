@@ -1,4 +1,4 @@
-# Task 1 #
+# Task 1: Image Processing #
 
 Welcome. For the first assignment we'll just get to know the codebase a little bit and practice manipulating images! You'll be modifying the file `src/hw1/process_image.c`.
 
