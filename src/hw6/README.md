@@ -1,4 +1,4 @@
-# CSE 576 Homework 6 #
+# Task 6: Optical Flow #
 
 Welcome, it's time for optical flow! Do the same:
 
@@ -53,7 +53,3 @@ Try calculating the optical flow between two dog images using `tryhw4.py`:
 It may look something like:
 
 ![](../../figs/lines.png)
-
-## Turn it in ##
-
-Turn in your `flow_image.c` on canvas under Homework 6.
