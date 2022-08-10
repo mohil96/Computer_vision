@@ -1,4 +1,4 @@
-# Task 5
+# Task 5: CNN
 
 Welcome, it's time for convolutional neural networks! Needless to say, run
 
