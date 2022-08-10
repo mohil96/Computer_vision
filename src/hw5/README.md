@@ -1,4 +1,4 @@
-# CSE 576 Homework 5
+# Task 5
 
 Welcome, it's time for convolutional neural networks! Needless to say, run
 
@@ -22,23 +22,10 @@ This dataset is selected from AffectNet, ImageNet, and CIFAR-10.  This "toy" dat
 <img src="../../figs/data_sample.jpg" width="500" />
 
 
-Turn in your answers (in a _report.pdf_ file) and code (the _answer.py_ file) for your submission.
-We strongly advise you to review lecture notes and PyTorch
-[tutorial](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)
-before starting this homework.
-
-For grading purpose, do not change anything in other files in the starter code, and train your model for 10 epochs for each question. The training and evaluation code are already finished for you in the _main.py_ and _helper.py_ files. 
-The _train.csv_ and _valid.csv_ files define the location and label for each image, which are then loaded into deep learning models by the _loader.py_ code.
-
 Read the _run_ function in _helper.py_ to understand the logic of training process.
 
 Your code will be tested in Python 3.7 and PyTorch 1.8 under the Linux environment, where the installation steps can be found in the appendix. You should not import any other libraries in your code.
 
-
-
-## Submission ##
-Submit your assignment to Canvas.
-Your _report.pdf_ and _answer.py_ files should be be submitted.
 
 
 For each question, you need to report your results in three aspects:
