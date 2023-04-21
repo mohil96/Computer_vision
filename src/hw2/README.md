@@ -1,6 +1,6 @@
 # Task 2: Image filtering #
 
-Welcome, it's time for task 2! This one may be a little harder than the last one so remember to start early! In order to make grading easier, please only edit the files we mention to submit. You will submit the `src/hw2/modify_image.c` file on Canvas.
+Welcome, it's time for task 2!
 
 Run the following commands from inside your `Homework` folder:
 ```
@@ -246,7 +246,7 @@ Write a function `image colorize_sobel(image im)`. Call `image *sobel_image(imag
 
 Now, we want to apply a non-linear filter, [Median Filter](https://en.wikipedia.org/wiki/Median_filter), to an image. Median filter is a great tool to solve the salt and pepper noises. We assume a median filter is a square, with the same height and width. The kernel size is always a positive odd number. We use clamp padding for borders. The output image should have the same width, height, and channels as the input image. You should apply median filter to each channel of the input image.
 
-#### TO DO (extra credit) ####
+#### TO DO ####
 Fill in the function `image apply_median_filter(image im, int kernel_size)`. NOTE: You may need to write appropriate header functions. Feel free to create a test function like the existing ones in test.c and/or tryhw2.py to check the correctness of your implementation. Hint: Use the `qsort` function of C, and define the compare function yourself.
 
 To submit the final image apply your filter to `/data/landscape.jpg` (write appropriate code in tryhw2.py and uwimg.py) and name it `median.jpg`. Good luck!
@@ -278,10 +278,10 @@ Hint: For the spatial Gaussian, you can use the `make_gaussian_filter()` you imp
 #### TO DO ####
 Write a function `image apply_bilateral_filter(image im, float sigma1, float sigma2)` where `sigma1` is for the spatial gaussian and `sigma2` is for the color distance Gaussian. Use a kernel size of 6 x `sigma1` for the bilateral filter. Your image should have a similar effect to the image below, so we suggest testing out a few spatial and color sigma parameters before submitting your final image (you can find the before image in `/data/bilateral_raw.png`. Note that it is 40x40 pixels and is being upsampled in this README). Ideally, `sigma1` should be > 1 and `sigma2` should be < 0.5.
 
+To submit the final image apply your filter to `/data/landscape.jpg` (write appropriate code in tryhw2.py and uwimg.py) and name it `bilateral.jpg`. Good luck!
 
 Before                 |  After 
 :-----------------:|:------------------:
 ![](../../figs/bilateral_pre.png)   |  ![](../../figs/bilateral_post.png)
 
 ![cat](../../figs/bilateral_cat.png)
-

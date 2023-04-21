@@ -1,4 +1,5 @@
 import pdb
+from readline import insert_text
 
 import torch
 import torch.nn as nn
@@ -6,9 +7,11 @@ import torch.nn.functional as F
 import torch.optim as optim
 
 from torchvision import transforms
-
+import random
 
 # %%
+
+
 class NN(nn.Module):
     def __init__(self, arr=[]):
         super(NN, self).__init__()
@@ -39,7 +42,10 @@ class SimpleCNN(nn.Module):
 
         TODO: fill this forward function for data flow
         """
-        pass
+        x = self.pool(F.relu(self.conv_layer(x)))
+        x = x.reshape(-1, 1568)
+        x = self.fc1(x)
+        return x
 
 
 # %%
@@ -51,7 +57,7 @@ Question 3
 TODO: Add color normalization to the transformer. For simplicity, let us use 0.5 for mean
       and 0.5 for standard deviation for each color channel.
 """
-norm_transformer = transforms.Compose([])
+norm_transformer = transforms.Compose([transforms.ToTensor(), transforms.Normalize(0.5, 0.5)])
 
 
 # %%
@@ -63,7 +69,21 @@ class DeepCNN(nn.Module):
 
         TODO: setup the structure of the network
         """
-        pass
+        self.l = []
+        ip_channels = 3
+        ip_size = 30
+        for i in arr:
+            if i != "pool":
+                self.l.append(nn.Conv2d(ip_channels, i, 3))
+                self.l.append(nn.ReLU())
+                ip_size = ip_size - 2
+                ip_channels = i
+            else:
+                self.l.append(nn.MaxPool2d(2))
+                ip_size = int(ip_size / 2)
+
+        self.model = nn.Sequential(*self.l)
+        self.fc1 = nn.Linear(ip_channels * ip_size * ip_size, 5)
 
     def forward(self, x):
         """
@@ -71,7 +91,12 @@ class DeepCNN(nn.Module):
 
         TODO: setup the flow of data (tensor)
         """
-        pass
+
+        x = self.model(x)
+        x = torch.flatten(x, 1)
+        x = self.fc1(x)
+
+        return x
 
 
 # %%
@@ -83,12 +108,16 @@ TODO:
     and random affine transformation
 
     1. It should randomly flip the image horizontally with probability 50%
-    2. It should apply random affine transformation to the image, which randomly rotate the image 
+    2. It should apply random affine transformation to the image, which randomly rotate the image
         within 5 degrees, and shear the image within 10 degrees.
     3. It should include color normalization after data augmentation. Similar to question 3.
 """
 
 """Add random data augmentation to the transformer"""
-aug_transformer = transforms.Compose([])
-
-
+aug_transformer = transforms.Compose(
+    [
+        transforms.ToTensor(),
+        transforms.RandomHorizontalFlip(p=0.5),
+        transforms.RandomAffine(degrees=5, shear=10),
+        transforms.Normalize(0.5, 0.5)
+    ])

@@ -1,8 +1,8 @@
 ![panorama of field](../../figs/field_panorama.jpg)
 
-# Task 3: Panoramas #
+# Task 3 #
 
-Welcome, it's time for Task 3! Similar to last task, perform
+Similar to last task, perform
 
 ```
 git pull
@@ -212,5 +212,4 @@ Mapping all the images back to the same coordinates is bad for large field-of-vi
 
 #### TO DO  ####
 Implement `image cylindrical_project(image im, float f)` to project an image to cylindrical coordinates and then unroll it. Consult the lecture slides for details about how to implement it. With this implementation you should be able to generate some very big panoramas (the `field*.jpg` panorama) using `field_panorama` in `tryhw3.py`. Attach the generated `field_panorama_5.jpg` in your report. You may also try your own images if you want!
-
 

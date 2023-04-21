@@ -1,6 +1,6 @@
 # Task 1: Image Processing #
 
-Welcome. For the first assignment we'll just get to know the codebase a little bit and practice manipulating images! You'll be modifying the file `src/hw1/process_image.c`.
+Welcome. For the first task we'll just get to know the codebase a little bit and practice manipulating images! You'll be modifying the file `src/hw1/process_image.c`.
 
 Everytime you make any changes to the code, run the commands:
 
@@ -223,7 +223,7 @@ Finally, when your done we can mess with some images! In `tryhw1.py` we convert 
 
 That's exciting! You may play around with it a little bit to see what you can make. Note that with the above method we do get some artifacts because we are trying to increase the saturation in areas that have very little color. Instead of shifting the saturation, you could scale the saturation by some value to get smoother results!
 
-## 8. Extra credit ##
+## 8. Scale a Channel ##
 
 Implement `void scale_image(image im, int c, float v)` to scale a channel by a certain amount. This will give us better saturation results. Note, you will have to add the necessary lines to the header file(s) to include the function, it should be very similar to what's already there for `shift_image`. Now if we multiply (scale) saturation by `2` instead of just shifting it all up we get much better results:
 
@@ -236,7 +236,7 @@ Implement `void scale_image(image im, int c, float v)` to scale a channel by a c
     
 ![Dog saturated smoother](../../figs/dog_scale_saturated.jpg)
 
-## 9. Super extra credit ##
+## 9. RGB to HCL ##
 
 Implement RGB to [Hue, Chroma, Lightness](https://en.wikipedia.org/wiki/CIELUV#Cylindrical_representation_.28CIELCH.29), a perceptually more accurate version of Hue, Saturation, Value. Note, this will involve gamma decompression, converting to CIEXYZ, converting to CIELUV, converting to HCL, and the reverse transformations. The upside is a similar colorspace to HSV but with better perceptual properties!
 
